@@ -1,4 +1,7 @@
 resource "argocd_application_set" "git_directories" {
+
+  count = var.application_set_enabled ? 1:0
+
   metadata {
     name = "git-directories"
     namespace = var.argocd_namespace
@@ -30,7 +33,7 @@ resource "argocd_application_set" "git_directories" {
 
         destination {
           server    = "https://kubernetes.default.svc"
-          namespace = var.namespace != "" ? var.namespace:"{{path.basename}}"
+          namespace = var.application_namespace != "" ? var.application_namespace:"{{path.basename}}"
         }
 
         sync_policy {

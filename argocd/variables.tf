@@ -73,6 +73,12 @@ variable "insecure" {
 # application_set
 ################################################################################
 
+variable "application_set_enabled" {
+  type        = bool
+  default     = true
+  description = "Variable indicating whether application set are enabled"
+}
+
 variable "repo_url" {
   type        = string
   description = "Git repo url"
@@ -97,7 +103,7 @@ variable "target_revision" {
   default     = "HEAD"
 }
 
-variable "namespace" {
+variable "application_namespace" {
   type        = string
   description = "Namespace"
   default     = ""
