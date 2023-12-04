@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 module "cluster" {
-  source = "../../cluster"
+  source = "../../modules/cluster"
   
   vpc_name = var.vpc_name
   
@@ -32,13 +32,13 @@ provider "helm" {
 }
 
 module "argocd" {
-  source = "../../argocd"
+  source = "../../modules/argocd"
 
   admin_password = var.admin_password
 }
 
 module "istio" {
-  source = "../../istio"
+  source = "../../modules/istio"
 }
 
 provider "kubernetes" {
