@@ -1,24 +1,14 @@
+/* variable "region" {
+  description = "AWS region"
+  type        = string
+  default     = "us-east-2"
+}
+
 variable "eks_cluster_name" {
   description = "EKS cluster name"
   type        = string
-  default     = ""
-}
-
-variable "eks_cluster_endpoint" {
-  description = "EKS cluster endpoint"
-  type        = string
-  default     = ""
-}
-
-variable "eks_cluster_ca_cert" {
-  description = "Base64 encoded certificate required to communicate with the cluster"
-  type        = string
-  default     = ""
-}
-
-################################################################################
-# istio
-################################################################################
+  default     = "eksdemo"
+} */
 
 variable "base_enabled" {
   type        = bool
@@ -60,7 +50,7 @@ variable "create_namespace" {
 variable "namespace" {
   description = "Kubernetes namespace for Istio"
   type        = string
-  default     = "istio-system"
+  default     = "istio"
 }
 
 variable "base_settings" {
